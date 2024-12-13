@@ -1,6 +1,14 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"Airbnb-room/config"
+
+	"github.com/gin-gonic/gin"
+)
+
+func init() {
+	config.InitDB();
+}
 
 func main() {
 	r := gin.Default()
@@ -9,5 +17,5 @@ func main() {
 			"message": "pong",
 		})
 	})
-	r.Run() 
+	r.Run()
 }
